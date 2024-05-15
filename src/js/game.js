@@ -8,8 +8,8 @@ export class Game extends Engine {
 
     constructor() {
         super({ 
-            width: 1280,
-            height: 720,
+            width: 1600,
+            height: 900,
             maxFps: 60,
          })
         this.start(ResourceLoader).then(() => this.startGame())

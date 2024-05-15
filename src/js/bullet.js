@@ -6,5 +6,4 @@ export class Bullet extends Actor {
     shoot(){
         console.log("pew-pew")
         }
-        
     }

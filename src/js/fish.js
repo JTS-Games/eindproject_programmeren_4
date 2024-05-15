@@ -6,7 +6,7 @@ export class Fish extends Actor {
     onInitialize(engine){
         this.graphics.use(Resources.Fish.toSprite())
         this.graphics.flipHorizontal = true
-        this.pos.x = engine.drawWidth / 2
+        this.pos.x = engine.drawWidth / 4
         this.pos.y = engine.drawHeight / 2
     }
 
