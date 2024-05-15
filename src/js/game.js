@@ -1,6 +1,7 @@
 import '../css/style.css'
-import { Actor, Engine, Vector, DisplayMode } from "excalibur"
-import { Resources, ResourceLoader } from './resources.js'
+import { Actor, Engine, Font, Label, Vector } from "excalibur";
+import { ResourceLoader, Resources } from './resources.js';
+import { Fish } from './fish.js'
 
 export class Game extends Engine {
 
@@ -9,17 +10,17 @@ export class Game extends Engine {
             width: 1280,
             height: 720,
             maxFps: 60,
-            displayMode: DisplayMode.FitScreen
          })
         this.start(ResourceLoader).then(() => this.startGame())
     }
 
     startGame() {
         console.log("start de game!")
-        const fish = new Actor()
-        fish.graphics.use(Resources.Fish.toSprite())
-        fish.pos = new Vector(400, 300)
-        fish.vel = new Vector(-10,0)
+        this.spawnFish()
+    }
+
+    spawnFish(){
+        const fish = new Fish()
         this.add(fish)
     }
 }
