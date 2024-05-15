@@ -2,6 +2,7 @@ import '../css/style.css'
 import { Actor, Engine, Font, Label, Vector } from "excalibur";
 import { ResourceLoader, Resources } from './resources.js';
 import { Fish } from './fish.js'
+import { Bullet } from './bullet.js';
 
 export class Game extends Engine {
 
