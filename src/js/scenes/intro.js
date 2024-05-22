@@ -1,13 +1,16 @@
 import { Scene } from "excalibur";
-import { Car } from "../car";
+import { Actor, Vector, Engine, Keys} from "excalibur";
+import { Resources} from "../resources"
 
 export class Intro extends Scene {
     onInitialize(engine) {
-        console.log("this intro is created only once.")
+        this.graphics.use(Resources.SuperRacersMenu.toSprite())
+        this.pos.x = engine.drawWidth / 4
+        this.pos.y = engine.drawHeight / 2  
     }
 
     onActivate(ctx) {
-        console.log("the game has switched to this intro.")
+        console.log("kachow")
     }
 
 }

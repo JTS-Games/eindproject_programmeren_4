@@ -2,10 +2,8 @@ import { Actor, Vector, Engine, Keys} from "excalibur";
 import { Resources} from "./resources"
 
 export class Car extends Actor {
-
     onInitialize(engine){
         this.graphics.use(Resources.Car.toSprite())
-
         this.pos.x = engine.drawWidth / 4
         this.pos.y = engine.drawHeight / 2
         this.pos = new Vector(400, 400);

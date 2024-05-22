@@ -5,7 +5,6 @@ import { Intro } from './scenes/intro.js';
 import { Level1 } from './scenes/level1.js';
 
 export class Game extends Engine {
-
     constructor() {
         super({ 
             width: 1600,
