@@ -1,8 +1,7 @@
 import '../css/style.css'
 import { Actor, Engine, Font, Label, Vector } from "excalibur";
 import { ResourceLoader, Resources } from './resources.js';
-import { Fish } from './fish.js'
-import { Bullet } from './bullet.js';
+import { Car } from './car.js'
 
 export class Game extends Engine {
 
@@ -17,12 +16,12 @@ export class Game extends Engine {
 
     startGame() {
         console.log("start de game!")
-        this.spawnFish()
+        this.spawnCar()
     }
 
-    spawnFish(){
-        const fish = new Fish()
-        this.add(fish)
+    spawnCar(){
+        const car = new Car()
+        this.add(car)
     }
 }
 
