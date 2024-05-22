@@ -1,7 +1,8 @@
 import '../css/style.css'
 import { Actor, Engine, Font, Label, Vector } from "excalibur";
 import { ResourceLoader, Resources } from './resources.js';
-import { Car } from './car.js'
+import { Intro } from './scenes/intro.js';
+import { Level1 } from './scenes/level1.js';
 
 export class Game extends Engine {
 
@@ -15,14 +16,11 @@ export class Game extends Engine {
     }
 
     startGame() {
+       this.add('intro', new Intro())
+        this.add('level1', new Level1())
+        this.goToScene('intro')
         console.log("start de game!")
-        this.spawnCar()
-    }
-
-    spawnCar(){
-        const car = new Car()
-        this.add(car)
-    }
+    }   
 }
 
 new Game()
