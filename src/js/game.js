@@ -17,7 +17,7 @@ export class Game extends Engine {
     startGame() {
        this.add('intro', new Intro())
         this.add('level1', new Level1())
-        this.goToScene('intro')
+        this.goToScene('level1')
         console.log("start de game!")
     }   
 }

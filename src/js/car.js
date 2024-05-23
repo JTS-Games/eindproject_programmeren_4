@@ -1,7 +1,9 @@
 import { Actor, Vector, Engine, Keys} from "excalibur";
 import { Resources} from "./resources"
 
+let speed = 0
 export class Car extends Actor {
+
     onInitialize(engine){
         this.graphics.use(Resources.Car.toSprite())
         this.pos.x = engine.drawWidth / 4
@@ -11,29 +13,30 @@ export class Car extends Actor {
     }
 
     onPreUpdate(engine) {
-      let speed = 0
+     
 
       if (speed > 0){
-        speed = speed - 1
+        speed = speed - (1.5 + 0.01*speed);
       }
 
         // UP = forward
         if (engine.input.keyboard.isHeld(Keys.W)) {
-          speed = 300;
+          speed += 9.5;
         }
 
         // DOWN = backward
         if (engine.input.keyboard.isHeld(Keys.S)) {
-          speed = -300;
+          speed -= 6;
         }
     
         // cursor keys is direction
         if (engine.input.keyboard.isHeld(Keys.D)) {
-          this.rotation += 0.05;
+          this.rotation += speed * 0.00008;
         }
         if (engine.input.keyboard.isHeld(Keys.A)) {
-          this.rotation -= 0.05;
+          this.rotation -=  speed * 0.00008;
         }
+          
     
         // direction is the cosine/sine of the angle!
         let direction = new Vector(
