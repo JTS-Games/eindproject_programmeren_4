@@ -1,8 +1,9 @@
 import '../css/style.css'
-import { Actor, Engine, Font, Label, Vector } from "excalibur";
+import { Camera, Actor, BoundingBox, Engine, Font, Label, Vector } from "excalibur";
 import { ResourceLoader, Resources } from './resources.js';
 import { Intro } from './scenes/intro.js';
 import { Level1 } from './scenes/level1.js';
+import { Car } from './car.js';
 
 export class Game extends Engine {
     constructor() {
@@ -15,10 +16,12 @@ export class Game extends Engine {
     }
 
     startGame() {
-       this.add('intro', new Intro())
-        this.add('level1', new Level1())
-        this.goToScene('level1')
-        console.log("start de game!")
+        this.add('intro', new Intro());
+        this.add('level1', new Level1());
+        this.goToScene('level1');
+        console.log("start de game!");
+        //this.currentScene.camera.strategy.lockToActor(this.Car);
+        this.currentScene.camera.strategy.limitCameraBounds(new BoundingBox(0, 0, 2000, 1200))
     }   
 }
 

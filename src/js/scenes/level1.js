@@ -8,6 +8,8 @@ export class Level1 extends Scene {
 
     onActivate(ctx) {
         this.spawnCar()
+        this.currentScene.camera.strategy.lockToActor(this.Car)
+        //this.currentScene.camera.strategy.limitCameraBounds(new BoundingBox(0, 0, 2000, 1200))
     }
 
 

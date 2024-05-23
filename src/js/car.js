@@ -37,7 +37,6 @@ export class Car extends Actor {
           this.rotation -=  speed * 0.00008;
         }
           
-    
         // direction is the cosine/sine of the angle!
         let direction = new Vector(
           Math.cos(this.rotation) * speed,
