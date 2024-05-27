@@ -1,5 +1,5 @@
 import { Actor, Vector, Engine, Keys} from "excalibur";
-import { Resources} from "./resources"
+import { ResourceLoader ,Resources} from "./resources"
 
 let speed = 0
 export class Car extends Actor {
@@ -16,12 +16,12 @@ export class Car extends Actor {
      
 
       if (speed > 0){
-        speed = speed - (1.5 + 0.01*speed);
+        speed = speed - (1.7 + 0.01*speed);
       }
 
         // UP = forward
         if (engine.input.keyboard.isHeld(Keys.W)) {
-          speed += 9.5;
+          speed += 10;
         }
 
         // DOWN = backward
@@ -31,10 +31,10 @@ export class Car extends Actor {
     
         // cursor keys is direction
         if (engine.input.keyboard.isHeld(Keys.D)) {
-          this.rotation += speed * 0.00008;
+          this.rotation += speed * 0.00013;
         }
         if (engine.input.keyboard.isHeld(Keys.A)) {
-          this.rotation -=  speed * 0.00008;
+          this.rotation -=  speed * 0.00013;
         }
           
         // direction is the cosine/sine of the angle!

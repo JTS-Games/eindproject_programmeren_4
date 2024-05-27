@@ -20,8 +20,6 @@ export class Game extends Engine {
         this.add('level1', new Level1());
         this.goToScene('level1');
         console.log("start de game!");
-        //this.currentScene.camera.strategy.lockToActor(this.Car);
-        this.currentScene.camera.strategy.limitCameraBounds(new BoundingBox(0, 0, 2000, 1200))
     }   
 }
 

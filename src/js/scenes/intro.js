@@ -1,6 +1,5 @@
-import { Scene } from "excalibur";
-import { Actor, Vector, Engine, Keys} from "excalibur";
-import { Resources} from "../resources"
+import { Scene, Camera, Actor, BoundingBox, Engine, Font, Label, Vector  } from "excalibur";
+import { ResourceLoader ,Resources} from "../resources"
 
 export class Intro extends Scene {
     onInitialize(engine) {

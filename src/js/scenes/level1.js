@@ -1,5 +1,9 @@
 import { Scene } from "excalibur";
 import { Car } from "../car";
+import { Camera, Actor, BoundingBox, Engine, Font, Label, Vector } from "excalibur";
+import { ResourceLoader, Resources } from '../resources';
+
+let blockspeed = 10;
 
 export class Level1 extends Scene {
     onInitialize(engine) {
@@ -8,14 +12,24 @@ export class Level1 extends Scene {
 
     onActivate(ctx) {
         this.spawnCar()
-        this.currentScene.camera.strategy.lockToActor(this.Car)
-        //this.currentScene.camera.strategy.limitCameraBounds(new BoundingBox(0, 0, 2000, 1200))
-    }
 
+        for (let i = 0; i < 1000; i++) {
+            this.spawnBlock(i)
+        }
+    }
 
     spawnCar(){
         const car = new Car()
         this.add(car)
+    }
+
+    spawnBlock(i){
+        const fish = new Actor()
+        fish.graphics.use(Resources.Fish.toSprite())
+        fish.pos = new Vector(0+i*100, Math.random()*1080)
+        fish.vel = new Vector(-blockspeed, 0)
+        blockspeed += 2
+        this.add(fish)
     }
 }
 
