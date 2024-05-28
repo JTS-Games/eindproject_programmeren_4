@@ -3,7 +3,7 @@ import { Camera, Actor, BoundingBox, Engine, Font, Label, Vector } from "excalib
 import { ResourceLoader, Resources } from './resources.js';
 import { Intro } from './scenes/intro.js';
 import { Level1 } from './scenes/level1.js';
-import { Car } from './car.js';
+import { Ending } from './scenes/ending.js';
 
 export class Game extends Engine {
     constructor() {
@@ -18,7 +18,8 @@ export class Game extends Engine {
     startGame() {
         this.add('intro', new Intro());
         this.add('level1', new Level1());
-        this.goToScene('level1');
+        this.add('ending', new Ending());
+        this.goToScene('intro');
         console.log("start de game!");
     }   
 }

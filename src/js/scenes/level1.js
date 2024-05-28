@@ -4,16 +4,16 @@ import { Block } from "../block";
 import { Camera, Actor, BoundingBox, Engine, Font, Label, Vector } from "excalibur";
 import { ResourceLoader, Resources } from '../resources';
 
+
 export class Level1 extends Scene {
     
     onInitialize(engine) {
         console.log("this level is created only once.")
-    
+        this.spawnCar()
+        this.spawnBlock()
     }
 
     onActivate(ctx) {
-        this.spawnCar()
-        this.spawnBlock
         let label = new Label({
             text: 'Score: 0',
             pos: new Vector(10, 10),
@@ -24,12 +24,16 @@ export class Level1 extends Scene {
         })
         
         this.add(label)
-        label.text = 'cheese'
+        label.text = 'Trans rights'
+        
     }
 
     spawnBlock(){
-        const block = new Block()
-        this.add(block)
+        for (let i = 0; i < 1000; i++) {
+            const block = new Block(i)
+            this.add(block)
+            console.log(i)
+        }
     }
 
     spawnCar(){
