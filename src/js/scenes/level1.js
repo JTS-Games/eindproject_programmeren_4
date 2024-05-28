@@ -15,7 +15,7 @@ export class Level1 extends Scene {
 
     onActivate(ctx) {
         let label = new Label({
-            text: 'Score: 0',
+            text: 'Skoor',
             pos: new Vector(10, 10),
             font: new Font({
                 family: 'verdena',
@@ -24,7 +24,6 @@ export class Level1 extends Scene {
         })
         
         this.add(label)
-        label.text = 'Trans rights'
         
     }
 

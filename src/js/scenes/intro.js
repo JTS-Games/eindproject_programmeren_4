@@ -19,7 +19,7 @@ export class Intro extends Scene {
         console.log("kachow")
         let label = new Label({
             text: 'Best game evur',
-            pos: new Vector(10, 10),
+            pos: new Vector(20, 10),
             font: new Font({
                 family: 'verdena',
                 size: 108,
@@ -30,7 +30,7 @@ export class Intro extends Scene {
 
         let label2 = new Label({
             text: 'Press space to start',
-            pos: new Vector(10, 500),
+            pos: new Vector(20, 500),
             font: new Font({
                 family: 'verdena',
                 size: 108,

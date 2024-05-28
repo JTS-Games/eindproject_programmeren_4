@@ -4,7 +4,7 @@ import { ImageSource, Sound, Resource, Loader } from 'excalibur'
 const Resources = {
     Fish: new ImageSource('images/fish.png'),
     Car: new ImageSource('images/car.png'),
-    SuperRacersMenu: new ImageSource('images/superRacersMenu.jpg')
+    Coin: new ImageSource('images/coin.jpg')
 }
 
 
