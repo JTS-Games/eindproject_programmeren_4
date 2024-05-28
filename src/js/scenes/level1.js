@@ -5,13 +5,26 @@ import { Camera, Actor, BoundingBox, Engine, Font, Label, Vector } from "excalib
 import { ResourceLoader, Resources } from '../resources';
 
 export class Level1 extends Scene {
+    
     onInitialize(engine) {
         console.log("this level is created only once.")
+    
     }
 
     onActivate(ctx) {
         this.spawnCar()
         this.spawnBlock
+        let label = new Label({
+            text: 'Score: 0',
+            pos: new Vector(10, 10),
+            font: new Font({
+                family: 'verdena',
+                size: 48,
+            })
+        })
+        
+        this.add(label)
+        label.text = 'cheese'
     }
 
     spawnBlock(){
@@ -27,6 +40,4 @@ export class Level1 extends Scene {
 
 }
 
-function spawnCar() {
-    throw new Error("Function not implemented.");
-}
+
