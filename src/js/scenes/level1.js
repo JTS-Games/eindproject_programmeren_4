@@ -1,6 +1,7 @@
 import { Scene } from "excalibur";
 import { Car } from "../car";
 import { Block } from "../block";
+import { Coin } from "../coin";
 import { Camera, Actor, BoundingBox, Engine, Font, Label, Vector } from "excalibur";
 import { ResourceLoader, Resources } from '../resources';
 
@@ -11,6 +12,7 @@ export class Level1 extends Scene {
         console.log("this level is created only once.")
         this.spawnCar()
         this.spawnBlock()
+        this.spawnCoin()
     }
 
     onActivate(ctx) {
@@ -31,6 +33,14 @@ export class Level1 extends Scene {
         for (let i = 0; i < 1000; i++) {
             const block = new Block(i)
             this.add(block)
+            console.log(i)
+        }
+    }
+
+    spawnCoin(){
+        for (let i = 0; i < 1000; i++) {
+            const coin = new Coin(i)
+            this.add(coin)
             console.log(i)
         }
     }

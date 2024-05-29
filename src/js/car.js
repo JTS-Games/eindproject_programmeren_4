@@ -2,6 +2,7 @@ import { Actor, Vector, Engine, Keys, Scene} from "excalibur";
 import { ResourceLoader ,Resources} from "./resources"
 import { Block } from "./block";
 import { Ending } from "./scenes/ending";
+import { Coin } from "./coin";
 
 let speed = 0
 export class Car extends Actor {
@@ -19,8 +20,10 @@ export class Car extends Actor {
 
     hitSomething(event){
       if (event.other instanceof Block) {
-          console.log('hit enemy')
           this.engine.goToScene('ending')
+      }
+      if (event.other instanceof Coin) {
+        console.log("Ka-ching!")
       }
   }
 
@@ -42,10 +45,10 @@ export class Car extends Actor {
     
         // cursor keys is direction
         if (engine.input.keyboard.isHeld(Keys.D)) {
-          this.rotation += speed * 0.00013;
+          this.rotation += speed * 0.00016;
         }
         if (engine.input.keyboard.isHeld(Keys.A)) {
-          this.rotation -=  speed * 0.00013;
+          this.rotation -=  speed * 0.00016;
         }
           
         // direction is the cosine/sine of the angle!
