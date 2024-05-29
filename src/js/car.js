@@ -21,7 +21,7 @@ export class Car extends Actor {
 
     hitSomething(event){
       if (event.other instanceof Block) {
-          this.engine.goToScene('ending')
+          this.goToScene('ending')
       }
       if (event.other instanceof Coin) {
         
