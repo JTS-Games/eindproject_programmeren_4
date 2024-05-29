@@ -30,7 +30,7 @@ export class Level1 extends Scene {
     }
 
     spawnBlock(){
-        for (let i = 0; i < 1000; i++) {
+        for (let i = 0; i < 500; i++) {
             const block = new Block(i)
             this.add(block)
             console.log(i)
@@ -38,7 +38,7 @@ export class Level1 extends Scene {
     }
 
     spawnCoin(){
-        for (let i = 0; i < 1000; i++) {
+        for (let i = 0; i < 500; i++) {
             const coin = new Coin(i)
             this.add(coin)
             console.log(i)
@@ -50,7 +50,9 @@ export class Level1 extends Scene {
         this.add(car)
     }
 
-
+    transitionScene(){
+        this.engine.goToScene('ending')
+    }
 }
 
 

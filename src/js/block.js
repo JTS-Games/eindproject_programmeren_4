@@ -15,7 +15,7 @@ export class Block extends Actor {
         this.graphics.use(Resources.Fish.toSprite())
         this.pos = new Vector(1599+this.i*200, Math.random()*900)
         this.vel = new Vector(-this.blockspeed, 0)
-        this.blockspeed += 1
+        this.blockspeed += 2
     }
 
     onPreUpdate(engine) {

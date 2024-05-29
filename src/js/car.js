@@ -1,7 +1,8 @@
-import { Actor, Vector, Engine, Keys, Scene} from "excalibur";
+import { Actor, Vector, Engine, Keys, Scene, clamp} from "excalibur";
 import { ResourceLoader ,Resources} from "./resources"
 import { Block } from "./block";
 import { Ending } from "./scenes/ending";
+import { Level1 } from "./scenes/level1";
 import { Coin } from "./coin";
 
 let speed = 0
@@ -21,7 +22,8 @@ export class Car extends Actor {
 
     hitSomething(event){
       if (event.other instanceof Block) {
-          this.goToScene('ending')
+        // @ts-ignore
+        this.scene.transitionScene()
       }
       if (event.other instanceof Coin) {
         
@@ -59,5 +61,8 @@ export class Car extends Actor {
         );
     
         this.vel = direction;
+        this.pos.x = clamp(50, this.pos.x, 1550);
+        this.pos.y = clamp(50, this.pos.y, 850);    
       }
+      
 }

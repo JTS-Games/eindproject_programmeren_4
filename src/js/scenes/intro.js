@@ -5,9 +5,7 @@ import { Level1 } from "./level1";
 
 export class Intro extends Scene {
     onInitialize(engine) {
-        //this.graphics.use(Resources.SuperRacersMenu.toSprite())
-        //this.pos.x = engine.drawWidth / 4
-        //this.pos.y = engine.drawHeight / 2  
+
     }
     onPreUpdate(engine) {
         if (engine.input.keyboard.isHeld(Keys.Space)) {
@@ -19,7 +17,7 @@ export class Intro extends Scene {
         console.log("kachow")
         let label = new Label({
             text: 'Best game evur!!1!',
-            pos: new Vector(20, 10),
+            pos: new Vector(50, 50),
             font: new Font({
                 family: 'verdena',
                 size: 108,
@@ -30,7 +28,7 @@ export class Intro extends Scene {
 
         let label2 = new Label({
             text: 'Press space to start',
-            pos: new Vector(20, 500),
+            pos: new Vector(50, 700),
             font: new Font({
                 family: 'verdena',
                 size: 108,
