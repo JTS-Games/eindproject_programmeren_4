@@ -3,9 +3,9 @@ import { ResourceLoader ,Resources} from "../resources"
 
 export class Ending extends Scene {
     onInitialize(engine) {
+
         console.log("kachow")
             this.label = new Label({
-            // @ts-ignore
             text: 'Iets werkt hier niet :(',
             pos: new Vector(20, 10),
             font: new Font({
@@ -18,7 +18,7 @@ export class Ending extends Scene {
 
         let label2 = new Label({
             text: 'Press space to play again',
-            pos: new Vector(20, 500),
+            pos: new Vector(20, 400),
             font: new Font({
                 family: 'verdena',
                 size: 108, 
@@ -26,6 +26,17 @@ export class Ending extends Scene {
         })
         
         this.add(label2)
+
+        let label3 = new Label({
+            text: 'Iets werkt hier niet :(',
+            pos: new Vector(20, 800),
+            font: new Font({
+                family: 'verdena',
+                size: 108, 
+            })
+        })
+        
+        this.add(label3)
     }
 
     onPreUpdate(engine) {
@@ -35,8 +46,12 @@ export class Ending extends Scene {
     }
 
     onActivate(ctx) {
-        /// skoor invullen
-        // @ts-ignore
+        /*console.log(this.engine.skoor)
+        if (this.engine.skoor > this.engine.highSkoor){
+            this.engine.highSkoor == this.engineskoor
+        } 
+        console.log(this.engine.highSkoor)*/
         this.label.text = 'Your skoor is: ' + this.engine.skoor
+        this.label3.text = "Kaasschaaf"
     }
 }

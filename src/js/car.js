@@ -24,14 +24,10 @@ export class Car extends Actor {
 
     hitSomething(event){
       if (event.other instanceof Block) {
-        // @ts-ignore
         this.scene.transitionScene();
       }
       if (event.other instanceof Coin) {
-        // @ts-ignore
         this.scene.addPoint()
-        // @ts-ignore
-        console.log(this.scene.skoor);
       }
   }
 
