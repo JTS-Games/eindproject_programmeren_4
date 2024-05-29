@@ -5,6 +5,7 @@ import { Ending } from "./scenes/ending";
 import { Coin } from "./coin";
 
 let speed = 0
+
 export class Car extends Actor {
   constructor(){
     super({radius: Resources.Car.height/2})
@@ -23,7 +24,7 @@ export class Car extends Actor {
           this.engine.goToScene('ending')
       }
       if (event.other instanceof Coin) {
-        console.log("Ka-ching!")
+        
       }
   }
 

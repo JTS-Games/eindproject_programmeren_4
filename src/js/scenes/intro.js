@@ -18,7 +18,7 @@ export class Intro extends Scene {
     onActivate(ctx) {
         console.log("kachow")
         let label = new Label({
-            text: 'Best game evur',
+            text: 'Best game evur!!1!',
             pos: new Vector(20, 10),
             font: new Font({
                 family: 'verdena',
