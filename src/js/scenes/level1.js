@@ -7,16 +7,16 @@ import { ResourceLoader, Resources } from '../resources';
 
 
 export class Level1 extends Scene {
+
+    label
     
     onInitialize(engine) {
         console.log("this level is created only once.")
         this.spawnCar()
         this.spawnBlock()
         this.spawnCoin()
-    }
 
-    onActivate(ctx) {
-        let label = new Label({
+        this.label = new Label({
             text: 'Skoor',
             pos: new Vector(10, 10),
             font: new Font({
@@ -25,8 +25,18 @@ export class Level1 extends Scene {
             })
         })
         
-        this.add(label)
+        this.add(this.label)
         
+    }
+
+    onActivate(ctx) {
+        this.engine.skoor = 0
+        this.label.text = "Skoor: " + this.engine.skoor
+    }
+
+    addPoint(){
+        this.engine.skoor += 1
+        this.label.text = "Skoor: " + this.engine.skoor
     }
 
     spawnBlock(){
@@ -37,6 +47,10 @@ export class Level1 extends Scene {
         }
     }
 
+    createScore(){
+        this.skoor = 0
+    }
+
     spawnCoin(){
         for (let i = 0; i < 500; i++) {
             const coin = new Coin(i)
@@ -44,6 +58,7 @@ export class Level1 extends Scene {
             console.log(i)
         }
     }
+
 
     spawnCar(){
         const car = new Car()
