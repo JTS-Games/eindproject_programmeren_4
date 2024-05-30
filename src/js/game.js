@@ -7,13 +7,12 @@ import { Ending } from './scenes/ending.js';
 
 export class Game extends Engine {
     skoor = 0
-    highskoor = 0
     constructor() {
         super({ 
             width: 1600,
             height: 900,
             maxFps: 60,
-            backgroundColor: Color.White
+            backgroundColor: Color.LightGray
          })
         this.start(ResourceLoader).then(() => this.startGame())
     }

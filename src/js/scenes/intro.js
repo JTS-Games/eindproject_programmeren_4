@@ -16,10 +16,10 @@ export class Intro extends Scene {
     onActivate(ctx) {
         console.log("kachow")
         let label = new Label({
-            text: 'Best game evur!!1!',
+            text: 'Greatest game evur!!1!',
             pos: new Vector(50, 50),
             font: new Font({
-                family: 'verdena',
+                family: 'comic sans ms',
                 size: 108,
             })
         })
@@ -30,12 +30,23 @@ export class Intro extends Scene {
             text: 'Press space to start',
             pos: new Vector(50, 700),
             font: new Font({
-                family: 'verdena',
+                family: 'comic sans ms',
                 size: 108,
             })
         })
         
         this.add(label2)
+
+        let label3 = new Label({
+            text: 'Game bij🐝 Joey Staneke',
+            pos: new Vector(1080, 850),
+            font: new Font({
+                family: 'comic sans ms',
+                size: 42,
+            })
+        })
+        
+        this.add(label3)
     }
     
 

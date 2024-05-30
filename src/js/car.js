@@ -51,7 +51,13 @@ export class Car extends Actor {
         if (engine.input.keyboard.isHeld(Keys.A)) {
           this.rotation -=  speed * 0.00016;
         }
-          
+        if (engine.input.keyboard.isHeld(Keys.Space)) {
+          this.pos = new Vector(400, 400);
+          this.vel = new Vector(0, 0);
+          speed = 0
+          this.rotation = 0
+        }
+
         let direction = new Vector(
           Math.cos(this.rotation) * speed,
           Math.sin(this.rotation) * speed

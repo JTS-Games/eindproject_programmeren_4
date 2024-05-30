@@ -13,14 +13,14 @@ export class Level1 extends Scene {
     onInitialize(engine) {
         console.log("this level is created only once.")
         this.spawnCar()
-        this.spawnBlock()
         this.spawnCoin()
+        this.spawnBlock()
 
         this.label = new Label({
             text: 'Skoor',
             pos: new Vector(10, 10),
             font: new Font({
-                family: 'verdena',
+                family: 'comic sans ms',
                 size: 48,
             })
         })
@@ -42,8 +42,7 @@ export class Level1 extends Scene {
     spawnBlock(){
         for (let i = 0; i < 500; i++) {
             const block = new Block(i)
-            this.add(block)
-            console.log(i)
+            this.add(block) 
         }
     }
 
@@ -55,7 +54,6 @@ export class Level1 extends Scene {
         for (let i = 0; i < 500; i++) {
             const coin = new Coin(i)
             this.add(coin)
-            console.log(i)
         }
     }
 

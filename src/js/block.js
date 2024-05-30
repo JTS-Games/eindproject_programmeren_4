@@ -7,19 +7,22 @@ export class Block extends Actor {
     blockspeed = 500;
     i = 0
     constructor(i){
-        super({ width: Resources.Fish.width-50, height: Resources.Fish.height-50 }) 
+        super({ width: Resources.Block.width-20, height: Resources.Block.height-20 }) 
         this.i = i
-        console.log(this);
     }
     onInitialize(engine){
-        this.graphics.use(Resources.Fish.toSprite())
+        this.graphics.use(Resources.Block.toSprite())
         this.pos = new Vector(1599+this.i*200, Math.random()*900)
         this.vel = new Vector(-this.blockspeed, 0)
-        this.blockspeed += 2
     }
+    onActivate(ctx) {
 
+    }   
     onPreUpdate(engine) {
-
+        if (engine.input.keyboard.isHeld(Keys.Space)) {
+            this.pos = new Vector(1599+this.i*200, Math.random()*900)
+            this.vel = new Vector(-this.blockspeed, 0)
+          }
     }
 
 

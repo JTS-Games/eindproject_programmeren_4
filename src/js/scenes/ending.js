@@ -1,57 +1,56 @@
 import { Scene, Camera, Actor, BoundingBox, Engine, Font, Label, Vector, Keys  } from "excalibur";
 import { ResourceLoader ,Resources} from "../resources"
 
+let highSkoor = 0
 export class Ending extends Scene {
     onInitialize(engine) {
-
-        console.log("kachow")
             this.label = new Label({
             text: 'Iets werkt hier niet :(',
             pos: new Vector(20, 10),
             font: new Font({
-                family: 'verdena',
+                family: 'comic sans ms',
                 size: 108,
             })
         })
         
         this.add(this.label)
 
-        let label2 = new Label({
+        this.label2 = new Label({
             text: 'Press space to play again',
             pos: new Vector(20, 400),
             font: new Font({
-                family: 'verdena',
+                family: 'comic sans ms',
                 size: 108, 
             })
         })
         
-        this.add(label2)
+        this.add(this.label2)
 
-        let label3 = new Label({
+        this.label3 = new Label({
             text: 'Iets werkt hier niet :(',
-            pos: new Vector(20, 800),
+            pos: new Vector(20, 790),
             font: new Font({
-                family: 'verdena',
+                family: 'comic sans ms',
                 size: 108, 
             })
         })
         
-        this.add(label3)
+        this.add(this.label3)
+    }
+
+
+    onActivate(ctx) {
+        this.label.text = 'Your skoor is: ' + this.engine.skoor
+        if (this.engine.skoor > highSkoor){
+            highSkoor = this.engine.skoor
+            console.log(highSkoor)
+            this.label3.text = 'Your haai🦈-skoor is: ' + highSkoor
+        } 
     }
 
     onPreUpdate(engine) {
         if (engine.input.keyboard.isHeld(Keys.Space)) {
-            this.engine.goToScene('intro')
+            this.engine.goToScene('level1')
           }
-    }
-
-    onActivate(ctx) {
-        /*console.log(this.engine.skoor)
-        if (this.engine.skoor > this.engine.highSkoor){
-            this.engine.highSkoor == this.engineskoor
-        } 
-        console.log(this.engine.highSkoor)*/
-        this.label.text = 'Your skoor is: ' + this.engine.skoor
-        this.label3.text = "Kaasschaaf"
     }
 }

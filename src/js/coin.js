@@ -10,7 +10,6 @@ export class Coin extends Actor {
     constructor(i){
         super({ width: Resources.Coin.width, height: Resources.Coin.height }) 
         this.i = i
-        console.log(this);
     }
     onInitialize(engine){
         this.graphics.use(Resources.Coin.toSprite())
@@ -27,7 +26,9 @@ export class Coin extends Actor {
     }
 
     onPreUpdate(engine) {
-
+        if (engine.input.keyboard.isHeld(Keys.Space)) {
+            this.pos = new Vector(1599+this.i*200, Math.random()*900)
+            this.vel = new Vector(-this.blockspeed, 0)
+          }
     }
-
 }
