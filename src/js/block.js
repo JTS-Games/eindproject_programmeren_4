@@ -13,7 +13,7 @@ export class Block extends Actor {
     onInitialize(engine){
         this.graphics.use(Resources.Block.toSprite())
         this.pos = new Vector(1599+this.i*200, Math.random()*900)
-        this.vel = new Vector(-this.blockspeed, 0)
+
     }
     onActivate(ctx) {
 
@@ -23,7 +23,9 @@ export class Block extends Actor {
             this.pos = new Vector(1599+this.i*200, Math.random()*900)
             this.vel = new Vector(-this.blockspeed, 0)
           }
+        this.blockspeed += 0.1
+        this.vel = new Vector(-this.blockspeed, 0)
+              //console.log(this.blockspeed)
     }
-
 
 }

@@ -27,8 +27,12 @@ export class Coin extends Actor {
 
     onPreUpdate(engine) {
         if (engine.input.keyboard.isHeld(Keys.Space)) {
+            this.blockspeed = 500
             this.pos = new Vector(1599+this.i*200, Math.random()*900)
             this.vel = new Vector(-this.blockspeed, 0)
           }
+      this.rotation = this.rotation + 0.1
+      this.blockspeed += 0.1
+      this.vel = new Vector(-this.blockspeed, 0)
     }
 }

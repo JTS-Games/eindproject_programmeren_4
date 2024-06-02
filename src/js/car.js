@@ -1,4 +1,4 @@
-import { Actor, Vector, Engine, Keys, Scene, clamp} from "excalibur";
+import { Actor, Vector, Engine, Keys, Scene, clamp, Color} from "excalibur";
 import { ResourceLoader ,Resources} from "./resources"
 import { Block } from "./block";
 import { Ending } from "./scenes/ending";

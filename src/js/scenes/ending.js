@@ -27,7 +27,7 @@ export class Ending extends Scene {
         this.add(this.label2)
 
         this.label3 = new Label({
-            text: 'Iets werkt hier niet :(',
+            text: 'Your haai🦈-skoor is: 0, lol',
             pos: new Vector(20, 790),
             font: new Font({
                 family: 'comic sans ms',

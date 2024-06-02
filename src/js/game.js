@@ -12,7 +12,7 @@ export class Game extends Engine {
             width: 1600,
             height: 900,
             maxFps: 60,
-            backgroundColor: Color.LightGray
+            backgroundColor: Color.fromRGB(130,190,130)
          })
         this.start(ResourceLoader).then(() => this.startGame())
     }
