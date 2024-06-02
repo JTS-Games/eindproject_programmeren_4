@@ -38,7 +38,7 @@ export class Intro extends Scene {
         this.add(label2)
 
         let label3 = new Label({
-            text: 'Game bij🐝 Joey Staneke',
+            text: 'Game bij🐝 Joey T Staneke',
             pos: new Vector(1080, 850),
             font: new Font({
                 family: 'comic sans ms',
