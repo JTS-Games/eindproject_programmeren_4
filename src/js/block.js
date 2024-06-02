@@ -20,6 +20,7 @@ export class Block extends Actor {
     }   
     onPreUpdate(engine) {
         if (engine.input.keyboard.isHeld(Keys.Space)) {
+            this.blockspeed = 500
             this.pos = new Vector(1599+this.i*200, Math.random()*900)
             this.vel = new Vector(-this.blockspeed, 0)
           }
