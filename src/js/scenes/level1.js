@@ -13,8 +13,8 @@ export class Level1 extends Scene {
     onInitialize(engine) {
         console.log("this level is created only once.")
         this.spawnCar()
-        //this.spawnCoin()
-        //this.spawnBlock()
+        this.spawnCoin()
+        this.spawnBlock()
 
         this.label = new Label({
             text: 'Skoor',
