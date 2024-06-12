@@ -1,6 +1,5 @@
 import { Scene, Camera, Actor, BoundingBox, Engine, Font, Label, Vector, Keys  } from "excalibur";
 import { ResourceLoader ,Resources} from "../resources"
-import { Level1 } from "./level1";
 
 
 export class Intro extends Scene {

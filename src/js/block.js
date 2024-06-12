@@ -26,7 +26,7 @@ export class Block extends Actor {
           }
         this.blockspeed += 0.1
         this.vel = new Vector(-this.blockspeed, 0)
-              //console.log(this.blockspeed)
+        console.log(this.blockspeed)
     }
 
 }
